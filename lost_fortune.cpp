@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <clocale>
 
 using std::cout;
 using std::cin;
@@ -16,37 +17,37 @@ int main()
 	string leader;
 
 	// get the information
-	cout << "Welcome to Lost Fortune\n\n";
-	cout << "Please enter the following for your personalized adventure\n";
+	setlocale(LC_CTYPE, "rus");
+	cout << "Добро пожаловать в Lost Fortune\n\n";
+	cout << "Пожалуйста, введите количество ваших попутчиков: ";
 
-	cout << "Enter a number: ";
 	cin >> adventurers;
 
-	cout << "Enter a number, smaller than the first: ";
+	cout << "Введите любое целое число меньше первого: ";
 	cin >> killed;
 
 	survivors = adventurers - killed;
 
-	cout << "Enter your last name: ";
+	cout << "Введите вашу фамилию (на английском): ";
 	cin >> leader;
 
 	// tell the story
-	cout << "\nA brave group of " << adventurers << " set out on a quest ";
-	cout << "-- in search of the lost treasure of the Ancient Dwarves. ";
-	cout << "The group was led by that legendary rogue, " << leader << ".\n";
+	cout << "\nОтважная группа из " << adventurers << " человек(а) отправилась на ";
+	cout << "поиски потерянного сокровища Древних гномов. ";
+	cout << "Группу возглавил легендарный путешественник, " << leader << ".\n";
 
-	cout << "\nAlong the way, a band of marauding ogres ambushed the party. ";
-	cout << "All fought bravely under the command of " << leader;
-	cout << ", and the ogres were defeated, but at a cost. ";
-	cout << "Of the adventurers, " << killed << " were vanquished, ";
-	cout << "leaving just " << survivors << " in the group.\n";
+	cout << "\nПо пути группа огров грабителей устроила засаду на отряд. ";
+	cout << "Все храбро сражались под командованием " << leader;
+	cout << ", и огры были побеждены, но дорогой ценой. ";
+	cout << "Из авантюристов, " << killed << " погиб(ли), ";
+	cout << "осталось только " << survivors << " человек(а) в группе.\n";
 
-	cout << "\nThe party was about to give up all hope. ";
-	cout << "But while laying the deceased to rest, ";
-	cout << "they stumbled upon the buried fortune. ";
-	cout << "So the adventurers split " << GOLD_PIECES << " gold pieces.";
-	cout << leader << " held on to the extra " << (GOLD_PIECES % survivors);
-	cout << " pieces to keep things fair of course.\n";
+	cout << "\nОтряд потерял всякую надежду. ";
+	cout << "Но, хороня покойного(ых), ";
+	cout << "они наткнулись на закопанный клад. ";
+	cout << "Итак, авантюристы разделили " << GOLD_PIECES << " золотых. ";
+	cout << leader << " оставил лишние " << (GOLD_PIECES % survivors);
+	cout << " золотых в могиле, чтобы все было по-честному.\n";
 
 	return 0;
 }
